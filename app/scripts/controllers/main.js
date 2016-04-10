@@ -2,7 +2,7 @@
 
 angular.module('iGemPlates2015App')
   .controller('MainCtrl', function ($scope, $http) {
-    $http.get('cards.json').success( function(data, status, headers, config) {
+    $http.get('https://api.hearthstonejson.com/v1/latest/enUS/cards.collectible.json').success( function(data, status, headers, config) {
         console.log(data)
         $scope.cards = data;
     });
