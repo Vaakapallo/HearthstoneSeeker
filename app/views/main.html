@@ -31,7 +31,8 @@
   <input placeholder="Search by card name" class="form-control" ng-model="criteria.name"></input>
 
   <b>Found cards: {{filteredcards.length}}</b> <br>
-
+  <!-- Average cost, average attack, average defence -->
+  <!-- Faction count -->
   <ul>
     <li ng-repeat="card in filteredcards = (cards | filter:criteria)">
       <h5>{{card.name}}</h5>
@@ -44,5 +45,5 @@
 </div>
 
 <div class="footer">
-  <p>by Lassi Vapaakallio</p>
+  <p>by Lassi Vapaakallio using the <a href="https://hearthstonejson.com/docs/cards.html">HearthStoneJSON api</a></p>
 </div>
