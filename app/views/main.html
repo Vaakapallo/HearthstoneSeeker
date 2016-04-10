@@ -1,0 +1,44 @@
+<div class="header">
+  <div class="pull-right">
+    <h4>by Lasd</h4>
+  </div>
+  <i>Search through Hearthstone cards</i><br>
+</div>
+
+<div>
+    <div class="dropdown-list">
+    <br>
+      <b>Choose Class: &nbsp;</b>
+      <select ng-model="criteria.playerClass">
+          <option value="">Any</option>
+          <option ng-repeat="card in cards | unique:'playerClass'" value={{card.playerClass}}>
+            {{card.playerClass}}
+          </option>
+      </select>
+    <br>
+  </div>
+  <div class="dropdown-list">
+    <b>Choose Type: &nbsp;</b>
+      <select ng-model="criteria.type">
+          <option value="">Any</option>
+          <option ng-repeat="card in cards | unique:'type'" value={{card.type}}>
+            {{card.type}}
+          </option>
+      </select>
+    <br>
+  </div>
+  <input placeholder="Search by card text" class="form-control" ng-model="criteria.text"></input>
+  <ul>
+    <li ng-repeat="card in cards | filter:criteria">
+      <b>{{card.name}}</b>
+      <ul>
+        <li>Text: {{card.text}}</li>
+        <li>Type: {{card.type}}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p>by Lassi Vapaakallio</p>
+</div>
