@@ -28,11 +28,15 @@
     <br>
   </div>
   <input placeholder="Search by card text" class="form-control" ng-model="criteria.text"></input>
+  <input placeholder="Search by card name" class="form-control" ng-model="criteria.name"></input>
+
+  <b>Found cards: {{filteredcards.length}}</b> <br>
+
   <ul>
-    <li ng-repeat="card in cards | filter:criteria">
-      <b>{{card.name}}</b>
+    <li ng-repeat="card in filteredcards = (cards | filter:criteria)">
+      <h5>{{card.name}}</h5>
       <ul>
-        <li>Text: {{card.text}}</li>
+        <li ng-bind-html="card.text | unsafe" ></li>
         <li>Type: {{card.type}}</li>
       </ul>
     </li>
