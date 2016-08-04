@@ -34,7 +34,9 @@
   <b>Found cards: {{filteredcards.length}}</b> <br>
   <i>Cost Average: {{calculateAverage(filteredcards, criteria.type, "cost") | number:2}}</i><br>
   <i ng-if="criteria.type == 'MINION'">Attack Average: {{calculateAverage(filteredcards, criteria.type, "attack") | number:2}}<br></i>
-  <i ng-if="criteria.type == 'MINION'">Health Average: {{calculateAverage(filteredcards, criteria.type, "health") | number:2}}</i>
+  <i ng-if="criteria.type == 'MINION'">Health Average: {{calculateAverage(filteredcards, criteria.type, "health") | number:2}}<br></i>
+  <i ng-if="criteria.type == 'MINION'">Aggressiveness ratio: {{calculateAverage(filteredcards, criteria.type, "attack")/calculateAverage(filteredcards, criteria.type, "health") | number:2}}</i>
+
 
   <!-- Average cost, average attack, average defence -->
   <!-- Faction count -->
