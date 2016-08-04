@@ -32,9 +32,9 @@
   <input placeholder="Search by mechanic, a bit broken" class="form-control" ng-model="criteria.mechanics"></input>
 
   <b>Found cards: {{filteredcards.length}}</b> <br>
-  <i>Cost Average: {{calculateAverage(filteredcards, criteria.type, "cost")}}</i><br>
-  <i ng-if="criteria.type == 'MINION'">Attack Average: {{calculateAverage(filteredcards, criteria.type, "attack")}}<br></i>
-  <i ng-if="criteria.type == 'MINION'">Health Average: {{calculateAverage(filteredcards, criteria.type, "health")}}</i>
+  <i>Cost Average: {{calculateAverage(filteredcards, criteria.type, "cost") | number:2}}</i><br>
+  <i ng-if="criteria.type == 'MINION'">Attack Average: {{calculateAverage(filteredcards, criteria.type, "attack") | number:2}}<br></i>
+  <i ng-if="criteria.type == 'MINION'">Health Average: {{calculateAverage(filteredcards, criteria.type, "health") | number:2}}</i>
 
   <!-- Average cost, average attack, average defence -->
   <!-- Faction count -->
